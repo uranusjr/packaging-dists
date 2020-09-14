@@ -40,6 +40,22 @@ from packaging_dists import Sdist, Wheel, parse
                 platform="any",
             ),
         ),
+        # Some random examples.
+        (
+            "zope.interface-4.5.0.tar.gz",
+            Sdist(project="zope-interface", version=Version("4.5.0")),
+        ),
+        (
+            "zope.interface-4.5.0-cp36-cp36m-win_amd64.whl",
+            Wheel(
+                project="zope-interface",
+                version=Version("4.5.0"),
+                build="",
+                python="cp36",
+                abi="cp36m",
+                platform="win_amd64",
+            ),
+        ),
     ],
 )
 def test_parse(filename, expected):
