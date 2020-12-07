@@ -28,8 +28,9 @@ def _find_name_version_sep(fragment, canonical_name):
     # type: (str, str) -> int
     """Find the separator's index based on the package's canonical name.
 
-    Copied verbatim from:
-      pip._internal.index.package_finder._find_name_version_sep
+    Copied verbatim from::
+
+        pip._internal.index.package_finder._find_name_version_sep
 
     This function is needed since the canonicalized name does not necessarily
     have the same length as the egg info's name part.
@@ -55,8 +56,9 @@ def _extract_version_from_fragment(fragment, canonical_name):
     # type: (str, str) -> Optional[str]
     """Parse the version string from an sdist stem.
 
-    This is copied verbatim from:
-       pip._internal.index.package_finder._extract_version_from_fragment
+    This is copied verbatim from::
+
+        pip._internal.index.package_finder._extract_version_from_fragment
     """
     try:
         version_start = _find_name_version_sep(fragment, canonical_name) + 1
