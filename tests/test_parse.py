@@ -56,6 +56,12 @@ from packaging_dists import Sdist, Wheel, parse
                 platform="win_amd64",
             ),
         ),
+        # tar.bz2 is a valid albeit legacy extension.
+        # See https://pypi.org/project/pyahocorasick/1.1.3/#files for instance
+        (
+            "pyahocorasick-1.1.3.tar.bz2",
+            Sdist(project="pyahocorasick", version=Version("1.1.3")),
+        ),
     ],
 )
 def test_parse(filename, expected):
