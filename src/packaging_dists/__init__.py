@@ -56,7 +56,7 @@ def _split_ext(s: str, exts: Iterable[str]) -> Optional[Tuple[str, str]]:
 
 @dataclasses.dataclass()
 class Sdist:
-    extensions: ClassVar[List[str]] = [".tar.gz", ".zip"]
+    extensions: ClassVar[List[str]] = [".tar.gz", ".zip", ".tar.bz2"]
     project: str
     version: AnyVersion
 
