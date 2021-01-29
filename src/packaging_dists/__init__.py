@@ -20,7 +20,7 @@ __all__ = [
     "parse",
 ]
 
-__version__ = "0.2"
+__version__ = "0.3"
 
 
 AnyVersion = Union[LegacyVersion, Version]
