@@ -25,8 +25,8 @@ __version__ = "0.2"
 
 AnyVersion = Union[LegacyVersion, Version]
 
-PROJECT_PATTERN = re.compile(
-    r"^([A-Z0-9]|[A-Z0-9][A-Z0-9._-]*[A-Z0-9])$", re.IGNORECASE,
+CANONICAL_NAME_PATTERN = re.compile(
+    r"^([A-Z0-9]|[A-Z0-9][A-Z0-9-]*[A-Z0-9])$", re.IGNORECASE,
 )
 
 
@@ -110,9 +110,9 @@ class Wheel:
             n, v, *b, python, abi, platform = stem.split("-")
         except ValueError:
             raise InvalidWheel(filename)
-        if not PROJECT_PATTERN.match(stem):
-            raise InvalidWheel(filename)
         parsed_project = canonicalize_name(n)
+        if not CANONICAL_NAME_PATTERN.match(parsed_project):
+            raise InvalidWheel(filename)
         if project and parsed_project != canonicalize_name(project):
             raise InvalidWheel(filename)
         try:

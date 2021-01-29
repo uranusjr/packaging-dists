@@ -56,6 +56,22 @@ from packaging_dists import Sdist, Wheel, parse
                 platform="win_amd64",
             ),
         ),
+        # Local versions should parse.
+        (
+            "foo-package-1.2.3+4.tar.gz",
+            Sdist(project="foo-package", version=Version("1.2.3+4")),
+        ),
+        (
+            "foo_package-1.2.3+4-py2.py3-none-any.whl",
+            Wheel(
+                project="foo-package",
+                version=Version("1.2.3+4"),
+                build="",
+                python="py2.py3",
+                abi="none",
+                platform="any",
+            ),
+        ),
         # tar.bz2 is a valid albeit legacy extension.
         # See https://pypi.org/project/pyahocorasick/1.1.3/#files for instance
         (
