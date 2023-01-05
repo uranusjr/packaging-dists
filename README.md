@@ -1,3 +1,9 @@
+THE FUNCTIONALITY PROVIDED BY THIS PACKAGE HAS BEEN MERGED INTO `packaging` as
+`parse_sdist_filename` AND `parse_wheel_filename`. PLEASE USE THOSE FUNCTIONS INSTEAD.
+
+IF YOU WANT TO USE THIS LIBRARY, ADD A `packaging<22.1` REQUIREMENT TO KEEP THE CODE WORKING.
+
+
 # packaging-dists
 
 Parse distribution file names for project information. This library is not
